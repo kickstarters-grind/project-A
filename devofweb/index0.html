@@ -1,0 +1,96 @@
+<html>
+  <head>
+    <title>ClickOrTap</title>
+    <link rel="icon" href="untitled.svg" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+      * {margin: 0; padding: 0; box-sizing: border-box;}
+      body {
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(45deg, #727171, rgb(190, 190, 190), #444444);
+        color: #fff;
+      }
+      nav {
+        background: linear-gradient(45deg, #ff7f50, #c8c84d, #ff8050);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 40px;
+        border-radius: 10px;
+        margin: 20px;
+      }
+      .logo img {
+        width: 45px;
+        transition: all 0.4s ease-in-out;
+        filter: drop-shadow(0 0 0 transparent);
+      }
+      .logo img:hover {
+        transform: scale(1.65) rotate(3deg);
+        filter: drop-shadow(0 0 10px rgba(255,255,255,0.6));
+      }
+      .name {
+        font-size: 26px;
+        font-weight: 700;
+        background: linear-gradient(90deg, #fff, #ffda7a);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        cursor: pointer;
+        transition: 0.3s ease-in-out;
+      }
+      .name:hover {
+        transform: scale(1.40);
+      }
+      ul {
+        list-style: none;
+        display: flex;
+        gap: 25px;
+      }
+      ul li a {
+        text-decoration: none;
+        color: #fff;
+        font-weight: 600;
+        transition: 0.3s;
+        padding: 6px 10px;
+        border-radius: 5px;
+      }
+      ul li a:hover,
+      ul li a.active {
+        background: rgba(255,255,255,0.3);
+      }
+      ul li a.active {
+        border-bottom: 2px solid #000;
+        font-weight: 700;
+      }
+      @media (max-width: 768px) {
+        nav {flex-direction: column; gap: 10px; padding: 15px 20px;}
+        ul {flex-direction: column; width: 100%;}
+        ul li a {width: 100%; text-align: center; padding: 10px;}
+        .name {font-size: 22px;}
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">
+        <a href="index4.html"><img src="untitled.svg" alt="Logo"></a>
+      </div>
+      <div class="name">ClickOrTap</div>
+      <ul>
+        <li><a href="index0.html" class="nav-link active">Home</a></li>
+        <li><a href="index1.html" class="nav-link">About</a></li>
+        <li><a href="index2.html" class="nav-link">Contact</a></li>
+        <li><a href="index3.html" class="nav-link">More</a></li>
+      </ul>
+    </nav>
+
+    <script>
+      // Set active link based on current page
+      const links = document.querySelectorAll('.nav-link');
+      links.forEach(link => {
+        if (link.getAttribute('href') === window.location.pathname.split('/').pop()) {
+          link.classList.add('active');
+        }
+      });
+    </script>
+  </body>
+</html>
